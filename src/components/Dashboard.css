@@ -1,0 +1,13 @@
+.dashboard {
+    padding: 20px;
+  }
+  .charts {
+    display: flex;
+    gap: 30px;
+  }
+  .chart {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  

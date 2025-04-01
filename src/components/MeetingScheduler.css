@@ -1,0 +1,30 @@
+.meeting-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .meeting-form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .meeting-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .meeting-form button {
+    background: green;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .meeting-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
