@@ -1,46 +1,249 @@
 /* Settings Page Styles */
 .settings-container {
-  padding: 20px;
-  max-width: 400px;
-  margin: auto;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s, color 0.3s;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #2c3e50;
 }
 
-/* Dark Mode */
-.dark {
-  background: #333;
-  color: white;
+.settings-container h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #2c3e50;
 }
 
-/* Setting Items */
+.settings-description {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.settings-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
 .setting-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: 15px 0;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
 }
 
-/* Button Styles */
-button {
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.setting-icon {
+  color: #3498db;
+  font-size: 1.25rem;
+}
+
+.shortcut-hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+/* Controls Styling */
+.toggle-button {
+  background: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  min-width: 80px;
+  transition: all 0.2s ease;
+}
+
+.toggle-button.active {
   background: #3498db;
   color: white;
-  border: none;
-  padding: 8px 12px;
+}
+
+select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  background: white;
+  min-width: 150px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
 }
 
-button:hover {
-  background: #2980b9;
+select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
-/* Select & Input Styles */
-select, input[type="color"] {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* Keyboard Shortcuts Section */
+.shortcuts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+kbd {
+  background: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #495057;
+  border: 1px solid #ced4da;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+/* Dark Mode Styles */
+.dark {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.dark .settings-container {
+  color: #fff;
+}
+
+.dark .settings-container h1,
+.dark .settings-section h2 {
+  color: #fff;
+}
+
+.dark .settings-description {
+  color: #aaa;
+}
+
+.dark .settings-section {
+  background: #2d2d2d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark .setting-item {
+  border-bottom-color: #404040;
+}
+
+.dark .setting-label {
+  color: #fff;
+}
+
+.dark .shortcut-hint {
+  background: #404040;
+  color: #aaa;
+}
+
+.dark select {
+  background: #404040;
+  border-color: #505050;
+  color: #fff;
+}
+
+.dark select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.dark .shortcut-item {
+  background: #404040;
+}
+
+.dark kbd {
+  background: #2d2d2d;
+  color: #fff;
+  border-color: #505050;
+}
+
+/* High Contrast Mode */
+[data-contrast="high"] {
+  --text-color: #000;
+  --bg-color: #fff;
+  --border-color: #000;
+}
+
+[data-contrast="high"] .settings-container {
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+[data-contrast="high"] .setting-item {
+  border-bottom-color: var(--border-color);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Focus Styles */
+*:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 1rem;
+  }
+
+  .shortcuts-list {
+    grid-template-columns: 1fr;
+  }
+
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  select {
+    width: 100%;
+  }
 }
